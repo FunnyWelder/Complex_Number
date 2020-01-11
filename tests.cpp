@@ -1,6 +1,8 @@
 #include "gtest/gtest.h"
 #include "lib.h"
 
+using namespace std;
+
 
 TEST(OperatorPlus, expectedPlus)
 {
@@ -37,13 +39,26 @@ TEST(OperatorDivision, expectedDivision)
 TEST(OperatorEquival, expectedTrue)
 {
     ComplexNumber a {4,5}, b {4,5};
-    EXPECT_EQ((a == b), true);
+    EXPECT_TRUE(a == b);
 }
 
 TEST(OperatorEquival, expectedFalse)
 {
     ComplexNumber a {4,5}, b {2,1};
-    EXPECT_EQ((a == b), false);
+    EXPECT_FALSE(a == b);
+}
+
+
+TEST(OperatorNotEquival, expectedTrue)
+{
+    ComplexNumber a {4,5}, b {2,1};
+    EXPECT_TRUE(a != b);
+}
+
+TEST(OperatorNotEquival, expectedFalse)
+{
+    ComplexNumber a {4,5}, b {4,5};
+    EXPECT_FALSE(a != b);
 }
 
 int main(int argc, char **argv) {
